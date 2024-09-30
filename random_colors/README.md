@@ -1,3 +1,5 @@
+[![style: solid](https://img.shields.io/badge/style-solid-orange)](https://pub.dev/packages/solid_lints)
+
 # random_colors
 
 A new Flutter project.
