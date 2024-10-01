@@ -20,7 +20,7 @@ class AppModule {
         GoRoute(
           name: 'home',
           path: Routes.home,
-          builder: (_, __) => HomePage(),
+          builder: (_, __) => const HomePage(),
         ),
       ];
 }

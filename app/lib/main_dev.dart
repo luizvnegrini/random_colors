@@ -1,7 +1,7 @@
-import 'app.dart';
-import 'core/config/flavors/f.dart';
+import 'package:random_colors/app.dart';
+import 'package:random_colors/core/core.dart';
 
-Future<void> main() async {
+void main() {
   F.appFlavor = Flavor.dev;
   Startup.run();
 }

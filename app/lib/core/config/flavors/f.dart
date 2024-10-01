@@ -1,18 +1,9 @@
-/// Enum representing different application environments (flavors).
-enum Flavor {
-  /// Development environment
-  dev,
-
-  /// Homologation environment
-  hml,
-
-  /// Production environment
-  prod,
-}
+import 'package:random_colors/core/config/flavors/flavor.dart';
 
 /// Class that manages flavor-specific configurations for the application.
 class F {
   /// The current flavor of the application.
+  // ignore: avoid_global_state
   static Flavor? appFlavor;
 
   /// Returns the name of the current flavor as a string.
