@@ -22,7 +22,7 @@ abstract class HomePageViewModel extends ViewModel<HomePageState> {
   HomePageViewModel(super.state);
 
   /// Generates a new color and updates the state accordingly.
-  Future<void> newColor();
+  void newColor();
 }
 
 /// Concrete implementation of [HomePageViewModel].
@@ -40,23 +40,16 @@ class HomePageViewModelImpl extends HomePageViewModel {
   /// Generates a new color, updates the state, and handles any potential
   /// errors.
   @override
-  Future<void> newColor() async {
-    // Set loading state
+  void newColor() {
     state = state.copyWith(isLoading: true);
 
-    // Simulate a delay (for demonstration purposes)
-    await Future.delayed(const Duration(seconds: 1));
-
-    // Generate a new color
     final result = generateNewColor();
 
-    // Update state based on the result
     final newState = result.fold(
       (failure) => state.copyWith(errorMessage: failure.message),
-      (color) => state.copyWith(color: color),
+      (hex) => state.copyWith(hex: hex),
     );
 
-    // Set final state (not loading, with updated color or error message)
     state = newState.copyWith(isLoading: false);
   }
 }

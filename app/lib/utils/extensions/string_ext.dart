@@ -13,7 +13,7 @@ extension HexColor on String {
   /// Returns a [Color] object representing the hexadecimal color.
   /// Throws a [FormatException] if the string cannot be parsed as a valid
   ///  hexadecimal number.
-  Color toColor() {
+  Color get toColor {
     final buffer = StringBuffer();
     if (length == _hexColorLength || length == _hexColorLengthWithHash) {
       buffer.write(_alphaChannel);

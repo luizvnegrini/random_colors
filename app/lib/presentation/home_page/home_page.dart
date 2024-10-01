@@ -19,8 +19,9 @@ class HomePage extends HookConsumerWidget {
 
     return HookConsumer(
       builder: (context, ref, __) {
-        //final vm = readHomeViewModel(ref);
+        final vm = readHomeViewModel(ref);
         final state = useHomeState(ref);
+        final color = state.hex?.toColor ?? Colors.white;
 
         if (state.errorMessage.isNotEmpty) {
           _handleError(
@@ -30,14 +31,31 @@ class HomePage extends HookConsumerWidget {
           );
         }
 
-        if (state.isLoading) {
-          loadingWidget = const Center(child: CircularProgressIndicator());
-        }
+        loadingWidget = state.isLoading
+            ? ScaffoldWidget(
+                showAppBar: false,
+                backgroundColor: color,
+                body: const Center(child: CircularProgressIndicator()),
+              )
+            : null;
 
-        return ScaffoldWidget(
-          backgroundColor: Colors.white,
-          body: loadingWidget ?? const Text('Unimplemented'),
-        );
+        return loadingWidget ??
+            GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: vm.newColor,
+              child: ScaffoldWidget(
+                showAppBar: false,
+                backgroundColor: color,
+                body: const Center(
+                  child: Text(
+                    'Tap to generate a new color',
+                    style: TextStyle(
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ),
+            );
       },
     );
   }

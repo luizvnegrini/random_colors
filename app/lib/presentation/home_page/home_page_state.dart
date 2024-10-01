@@ -10,21 +10,17 @@ abstract class HomePageState extends ViewModelState {
   abstract final String errorMessage;
 
   /// Represents the current color, can be null if no color is selected.
-  abstract final String? color;
+  abstract final String? hex;
 
   /// Creates a [HomePageState].
   const HomePageState();
 
   /// Creates a copy of this state with the given fields replaced with
-  /// new values.
-  /// @param isLoading The new loading state.
-  /// @param errorMessage The new error message.
-  /// @param color The new color.
-  /// @return A new instance of [HomePageState] with the updated fields.
+
   HomePageState copyWith({
     bool? isLoading,
     String? errorMessage,
-    String? color,
+    String? hex,
   });
 }
 
@@ -40,25 +36,21 @@ class HomePageStateImpl extends HomePageState {
 
   /// Represents the current color, can be null if no color is selected.
   @override
-  final String? color;
+  final String? hex;
 
   /// List of properties used for equality comparison.
   @override
   List<Object?> get props => [
         isLoading,
         errorMessage,
-        color,
+        hex,
       ];
 
   /// Creates a [HomePageStateImpl] with the given parameters.
-  ///
-  /// @param isLoading The loading state, defaults to false.
-  /// @param errorMessage The error message, defaults to an empty string.
-  /// @param color The current color, can be null.
   const HomePageStateImpl({
     this.isLoading = false,
     this.errorMessage = '',
-    this.color,
+    this.hex,
   });
 
   /// Factory constructor to create an initial state.
@@ -68,19 +60,15 @@ class HomePageStateImpl extends HomePageState {
 
   /// Creates a copy of this state with the given fields replaced
   /// with new values.
-  /// @param isLoading The new loading state.
-  /// @param errorMessage The new error message.
-  /// @param color The new color.
-  /// @return A new instance of [HomePageStateImpl] with the updated fields.
   @override
   HomePageState copyWith({
     bool? isLoading,
     String? errorMessage,
-    String? color,
+    String? hex,
   }) =>
       HomePageStateImpl(
         isLoading: isLoading ?? this.isLoading,
         errorMessage: errorMessage ?? this.errorMessage,
-        color: color ?? this.color,
+        hex: hex ?? this.hex,
       );
 }
