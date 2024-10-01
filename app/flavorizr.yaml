@@ -1,0 +1,22 @@
+flavors:
+  dev:
+    app:
+      name: "Random colors dev"
+    android:
+      applicationId: "com.randomcolors.dev"
+    ios:
+      bundleId: "com.randomcolors.dev"
+  hml:
+    app:
+      name: "Random colors hml"
+    android:
+      applicationId: "com.randomcolors.hml"
+    ios:
+      bundleId: "com.randomcolors.hml"
+  prod:
+    app:
+      name: "Random colors prod"
+    android:
+      applicationId: "com.randomcolors.prod"
+    ios:
+      bundleId: "com.randomcolors.prod"

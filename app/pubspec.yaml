@@ -1,0 +1,27 @@
+name: random_colors
+description: "A new Flutter project."
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  cupertino_icons: ^1.0.8
+  design_system:
+    path: ../packages/design_system
+  external_dependencies:
+    path: ../packages/external_dependencies
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_flavorizr: ^2.2.3
+  flutter_lints: ^4.0.0
+  flutter_test:
+    sdk: flutter
+  mocktail: ^1.0.3
+  solid_lints: ^0.2.3
+
+flutter:
+  uses-material-design: true
