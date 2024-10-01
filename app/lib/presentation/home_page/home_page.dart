@@ -43,14 +43,26 @@ class HomePage extends HookConsumerWidget {
             GestureDetector(
               behavior: HitTestBehavior.opaque,
               onTap: vm.newColor,
-              child: ScaffoldWidget(
-                showAppBar: false,
-                backgroundColor: color,
-                body: const Center(
-                  child: Text(
-                    'Tap to generate a new color',
-                    style: TextStyle(
-                      color: Colors.black,
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.easeInOut,
+                color: color,
+                child: ScaffoldWidget(
+                  showAppBar: false,
+                  backgroundColor: Colors.transparent,
+                  body: Center(
+                    child: Text(
+                      'Tap to change color',
+                      style: TextStyle(
+                        // Determines the text color based on the background
+                        // color's luminance
+                        // If the background is light (luminance > 0.5), use
+                        // black text
+                        // Otherwise, use white text for better contrast
+                        color: color.computeLuminance() > 0.5
+                            ? Colors.black
+                            : Colors.white,
+                      ),
                     ),
                   ),
                 ),
