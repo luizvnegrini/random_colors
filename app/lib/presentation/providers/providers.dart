@@ -1,5 +1,5 @@
 import 'package:external_dependencies/external_dependencies.dart';
-import 'package:random_colors/data/usecases/generate_new_color.dart';
+import 'package:random_colors/domain/domain.dart';
 
 /// Provider for the GenerateNewColor use case.
 /// This provider is auto-disposed when no longer needed.

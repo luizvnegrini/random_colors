@@ -1,4 +1,4 @@
-import 'package:random_colors/data/data.dart';
+import 'package:random_colors/domain/domain.dart';
 
 /// Abstract class representing the dependencies of the application.
 abstract class AppDependencies {

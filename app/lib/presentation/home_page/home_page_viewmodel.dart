@@ -1,6 +1,6 @@
 import 'package:external_dependencies/external_dependencies.dart';
-import 'package:random_colors/data/usecases/generate_new_color.dart';
-import 'package:random_colors/presentation/base/viewmodel.dart';
+import 'package:random_colors/domain/usecases/generate_new_color.dart';
+import 'package:random_colors/presentation/base/base.dart';
 import 'package:random_colors/presentation/home_page/home_page_state.dart';
 import 'package:random_colors/presentation/presentation.dart';
 
