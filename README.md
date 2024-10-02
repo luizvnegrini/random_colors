@@ -3,6 +3,7 @@
 This project is a simple Flutter application developed for a technical test. It demonstrates the ability to create an interactive user interface with animated color changes. The app allows users to tap the screen, which triggers a smooth transition to a new random background color. This showcases the developer's skills in implementing animations, state management, and user interactions in Flutter.
 
 # Demo
+https://github.com/user-attachments/assets/2a511665-bd33-4788-a6db-67234cefcde4
 
 ## Main Technologies
 - Flutter
