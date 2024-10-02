@@ -41,15 +41,11 @@ class HomePageViewModelImpl extends HomePageViewModel {
   /// errors.
   @override
   void newColor() {
-    state = state.copyWith(isLoading: true);
-
     final result = generateNewColor();
 
-    final newState = result.fold(
+    state = result.fold(
       (failure) => state.copyWith(errorMessage: failure.message),
       (hex) => state.copyWith(hex: hex),
     );
-
-    state = newState.copyWith(isLoading: false);
   }
 }
